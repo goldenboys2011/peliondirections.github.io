@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelion Directions</title>
+    <title>Pelion Directions2.0</title>
     <style>
         body {
             font-family: 'Roboto Mono', monospace; /* Set font-family */
@@ -41,8 +41,7 @@
         }
 
         .who-we {
-            opacity: 0;
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Add transition for transform */
+            transition: transform 1s ease-in-out; /* Add transition for transform */
             border-radius: 50%; /* Circular background */
             background-color: lightblue; /* Background color */
             padding: 20px; /* Padding */
@@ -50,9 +49,9 @@
             display: inline-block;
         }
 
-        .who-we.show {
-            opacity: 1;
-            transform: translateX(0); /* Move to the center */
+        .show {
+            opacity: 1 !important; /* Ensure it's visible */
+            transform: translateX(0) !important; /* Move to the center */
         }
 
         form {
@@ -121,7 +120,7 @@
         <a href="https://www.goldencube.dev">GoldenCube</a>
     </nav>
     <div class="content">
-        <section id="who-we" class="who-we">
+        <section id="who-we" class="who-we show">
             <h2>Who we are</h2>
             <p>Welcome to Pelion Directions! We are your trusted guide to the beautiful Pelion region in Greece.</p>
         </section>
