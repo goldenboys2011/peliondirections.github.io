@@ -6,9 +6,10 @@
     <title>Pelion Directions</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto Mono', monospace; /* Set font-family */
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increase font size */
         }
 
         header {
@@ -16,17 +17,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            animation: slideLeft 1s ease-out;
-            overflow: hidden; /* Ensure content doesn't overflow during animation */
-        }
-
-        @keyframes slideLeft {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
         }
 
         nav {
@@ -47,19 +37,22 @@
 
         .content {
             padding: 20px;
+            text-align: center; /* Center content */
         }
 
         .who-we {
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Add transition for transform */
             border-radius: 50%; /* Circular background */
             background-color: lightblue; /* Background color */
             padding: 20px; /* Padding */
-            transform: translateX(-20%); /* Offset to the left */
+            transform: translateX(-100%); /* Initial position to the left */
+            display: inline-block;
         }
 
         .who-we.show {
             opacity: 1;
+            transform: translateX(0); /* Move to the center */
         }
 
         form {
@@ -104,6 +97,7 @@
             padding: 20px 0;
             text-align: center;
             width: 100%; /* Full width */
+            clear: both; /* Clear floats */
         }
 
         footer a {
@@ -155,5 +149,5 @@
         <a href="/cdn-cgi/l/email-protection#fb92959d94bb9c94979f9e95988e999ed59f9e8d">Email</a>
         <br> Volos, Greece
     </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
