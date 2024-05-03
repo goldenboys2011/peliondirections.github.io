@@ -1,9 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelion Directions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: lightblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            background-color: lightblue;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            background-color: darkblue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .who-we {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .who-we.show {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: lightblue;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
 <body>
-  <div id="Maindiv">
-    <center>
-      <h1>
-        Welcom To Pelion Directions!
-      </h1>
-    </center>
-  </div>
+    <header>
+        <h1>Pelion Directions</h1>
+    </header>
+    <nav>
+        <a href="#who-we">Who are we</a>
+        <a href="/location">Locations</a>
+        <a href="http://www.goldencube.dev">GoldenCube</a>
+    </nav>
+    <div class="content">
+        <section id="who-we">
+            <h2>Who are we</h2>
+            <p>Welcome to Pelion Directions! We are your trusted guide to the beautiful Pelion region in Greece.</p>
+        </section>
+        <section>
+            <h2>Do You Want Your Place To Be On The Site?</h2>
+            <form id="contactForm" action="https://formspree.io/f/xleqbllp" method="POST" onsubmit="return validateForm()">
+                <label>
+                    Your email:
+                    <input type="email" name="email" id="email">
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message" id="message"></textarea>
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        &copy; GoldenCube 2024 |
+        <a href="https://www.youtube.com/@goldenCubeGR">YouTube</a> |
+        <a href="https://www.instagram.com/goldencubedev/">Instagram</a> |
+        <a href="https://twitter.com/goldencubeDev">Twitter</a> |
+        <a href="https://www.tiktok.com/@goldencube_official">TikTok</a> |
+        <a href="mailto:info@goldencube.dev">Email</a>
+        <br> Volos, Greece
+    </footer>
 </body>
+</html>
