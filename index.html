@@ -16,15 +16,16 @@
             color: white;
             padding: 20px;
             text-align: center;
-            animation: slideDown 1s ease-out;
+            animation: slideLeft 1s ease-out;
+            overflow: hidden; /* Ensure content doesn't overflow during animation */
         }
 
-        @keyframes slideDown {
+        @keyframes slideLeft {
             from {
-                transform: translateY(-100%);
+                transform: translateX(-100%);
             }
             to {
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
@@ -51,20 +52,68 @@
         .who-we {
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            border-radius: 50%; /* Circular background */
+            background-color: lightblue; /* Background color */
+            padding: 20px; /* Padding */
+            transform: translateX(-20%); /* Offset to the left */
         }
 
         .who-we.show {
             opacity: 1;
         }
 
-        footer {
-            background-color: lightblue;
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 22px); /* Adjust width for padding */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
             color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
             width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff; /* White text color */
+            padding: 20px 0;
+            text-align: center;
+            width: 100%; /* Full width */
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -75,11 +124,11 @@
     <nav>
         <a href="#who-we">Who are we</a>
         <a href="/location">Locations</a>
-        <a href="http://www.goldencube.dev">GoldenCube</a>
+        <a href="https://www.goldencube.dev">GoldenCube</a>
     </nav>
     <div class="content">
-        <section id="who-we">
-            <h2>Who are we</h2>
+        <section id="who-we" class="who-we">
+            <h2>Who we are</h2>
             <p>Welcome to Pelion Directions! We are your trusted guide to the beautiful Pelion region in Greece.</p>
         </section>
         <section>
@@ -103,8 +152,8 @@
         <a href="https://www.instagram.com/goldencubedev/">Instagram</a> |
         <a href="https://twitter.com/goldencubeDev">Twitter</a> |
         <a href="https://www.tiktok.com/@goldencube_official">TikTok</a> |
-        <a href="mailto:info@goldencube.dev">Email</a>
+        <a href="/cdn-cgi/l/email-protection#fb92959d94bb9c94979f9e95988e999ed59f9e8d">Email</a>
         <br> Volos, Greece
     </footer>
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
